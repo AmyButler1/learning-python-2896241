@@ -3,7 +3,6 @@
 # LinkedIn Learning Python course by Joe Marini
 #
 
-
 # Basic data types in Python: Numbers, Strings, Booleans, Sequences, Dictionaries
 myint = 5
 myfloat = 13.2
@@ -22,16 +21,48 @@ print(mytuple)
 print(mydict)
 
 # re-declaring a variable works
-
+myint = "abc"
+print(myint)
 # to access a member of a sequence type, use []
+print(mylist[2])
+print(mytuple[1])
+
 
 # use slices to get parts of a sequence
+print(mylist[1:5])
+print(mylist[1:5:2])
 
 # you can use slices to reverse a sequence
+print(mylist[::-1])
 
 # dictionaries are accessed via keys
+print(mydict["one"])
 
 # ERROR: variables of different types cannot be combined
+#print("string type" +123)
+####fix - use str to convert integer into a string
+print("string type"+ str(123))
 
 # Global vs. local variables in functions
+def someFunction():
+    mystr = "def"
+    print(mystr)
+
+someFunction()
+print(mystr)
+### prints earlier mystr instead of "def" as ot ithin the area
+
+def someFunction():
+    global mystr
+    mystr = "def"
+    print(mystr)
+
+someFunction()
+print(mystr)
+
+
+####delete variables
+del mystr
+print(mystr)
+
 
